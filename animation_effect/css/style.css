@@ -1,0 +1,141 @@
+.box { width:200px; height:200px; background-color: yellowgreen; 
+/*    애니메이션 속성*/
+    animation-name: Ani; 
+/*    애니라는 키프레임을 가져다 사용하겠다*/
+    animation-duration: 2s; /*    동작시간*/
+    animation-timing-function: linear; /*    가속도*/
+    animation-delay: 4s; /*    지연시간*/
+    animation-iteration-count: infinite; /*    반복횟수*/
+    animation-direction:alternate-reverse; /*    프레임의 진행방향*/
+    animation-play-state: running;
+
+    animation: Ani 2s linear 4s infinite alternate-reverse running;
+}
+
+.box:hover{animation-play-state: paused;}
+
+/*애니메이션의 프레임*/
+@keyframes Ani{ 
+    
+    from { border-radius: 0; transform:translateX(200px); }
+    to{ border-radius: 50%; transform:translateX(400px); }   
+}
+
+@keyframes Ani2 { 
+    from { border-radius: 0; transform:rotate(0deg); }
+    to{ border-radius: 50%; transform:rotate(720deg); }   
+}
+
+/*================================================================*/
+/*초기화*/
+* { margin:0; padding:0; }
+li {list-style: none; }
+
+/*화면구성*/
+h1 { text-align: center; margin: 50px 0 40px; 
+/*
+    animation-name: DownMove;
+    animation-duration: 2s;
+*/
+    animation: DownMove 2s;}
+
+.cake {width:920px; margin:0 auto;}
+.cake li { width:200px; height:200px; float:left; margin: 15px; border-radius: 50%;
+overflow:hidden;}
+.cake li img{ width: 100%; }
+
+/*누구한테 border-raidus를 줬냐에 따라 마우스를 갖다댔을 때 scale 효과가 달라진다*/
+/*.cake li img:hover{transform: scale(1.5);}*/
+
+/*키프레임*/
+@keyframes DownMove {
+    0%{ transform: translateY(-100px);}
+    
+    30%, 70%{ transform: translateY(50px) ;} /*    변화는 없고 시간만 흐르는 것*/
+/*    70%{ transform: translateY(50px) ;}*/
+    
+/*    50%: 2초일 경우 처음 시작해서 1초의 시간이 흐르는 동안*/
+    100%{ transform: translateY(0px);}
+}
+
+.cake li {
+    animation-name: cake;
+    animation-duration: 2s;
+    animation-timing-function: linear; /*    균일한속도*/
+}
+
+@keyframes cake{ 
+    0%{transform: scale(0); opacity: 0;}
+    20%{transform: scale(0.6); }
+    40%{transform: scale(0.2);}
+    60%{transform: scale(0.8);}
+    80%{transform: scale(0.4) rotate(360deg);}
+    100%{transform: scale(1) rotate(0deg); opacity: 1;}
+}
+/*===================================================================*/
+.end{
+    width:200px; height:200px; background-color: dodgerblue; margin:20px; 
+    animation-name: Move;
+    animation-duration: 2000ms; 
+    animation-timing-function: linear;
+    animation-fill-mode: forwards; /*    끝난 자리에 멈춰져있는 것*/
+}
+
+@keyframes Move { 
+    0% { transform: translateX(100px);}
+    to { transform: translateX(400px);}
+}
+/*============================================================================*/
+
+* { margin:0; padding:0; }
+li {list-style: none; }
+
+.icon{ width: 128px; height:128px; 
+/*    레이어 중앙정렬*/
+    position: absolute; top:50%; left:50%;
+    margin-left:-64px; margin-top: -64px;
+    opacity: 0; 
+/*    안보이는 상태로 시작해야 안보이는 상태로 끝난다*/
+    animation: icon 3s linear 1s;
+}
+@keyframes icon{
+/*
+    0%,20%{opacity: 0;}
+    20%,80%{opacity: 1;}
+    100%{opacity: 0;}
+*/
+    0%, 100% { opacity: 1;}
+}
+body{ animation: backcolor 4s linear 5s forwards; }   
+
+@keyframes backcolor{ 
+    0% { background-color: #fff}
+    100%{ background-color: #000;}
+}
+
+.title {text-align: center; margin: 40px 0 15px; color: white; font-size: 25px; font-weight: bold; 
+    opacity: 0;
+    animation: downAni 1s linear 6s forwards; }
+
+@keyframes downAni{
+    0% { transform:translateY(-50px);}
+    100%{ opacity: 1; transform:translateY(0px);}
+}
+
+.desc{text-align: center; color: deepskyblue; 
+    opacity: 0;
+    animation: leftAni 1s linear 8s forwards;}
+
+@keyframes leftAni{
+    0% { transform:translateX(-100px);}
+    100%{ opacity: 1; transform:translateX(0px);}
+}
+
+.phone{text-align: center; margin-top:60px;
+    opacity: 0;
+    animation: upAni 1s linear 10s forwards;}
+
+@keyframes upAni {
+    0% { transform:translateY(100px);}
+    100%{ opacity: 1; transform:translateY(0px);}
+}
