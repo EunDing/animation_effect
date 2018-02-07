@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="제작툴"/>
+        <meta name="author" content="제작자" />
+        <meta name="keywords" content="사이트 키워드" />
+        <meta name="description" content="사이트 설명" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <title>Hanpixel</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+<!--        < 2D & 3D / jquery >-->
+        
+<!--
+        <div class="box">
+            <div class="inner">프론트엔드</div>
+        </div>
+-->
+        
+        
+<!--        perspective 부모, 자식관계-->
+<!--
+        <div class="exam">
+            <div class="nemo"></div>
+            <div class="nemo"></div>
+            <div class="nemo"></div>
+        </div>
+-->
+        
+        
+        
+<!--        3D 객체화 : 태그 자체가 공간을 인식하고 공간안에 3D를 표현해주는 방식-->
+        
+<!--
+        <div class="poster">
+            <div class="img">
+                <img src="images/poster.jpg" />
+            </div>
+        </div>
+-->
+        
+<!--      3D 예제  
+    1. Flip 
+    2. Cube 
+    3. Carousel
+-->
+<!--
+        <div class="open">
+            <div class="close"></div>
+        </div>
+        
+-->
+        
+<!--
+        <ul class="phone">
+            <li>
+                <div class="flip">
+                    <div class="front">
+                        <img src="images/jet_front.png" />
+                    </div>
+                    <div class="back">
+                        <img src="images/jet_back.png" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+-->
+                 <div class="container">
+            <div id="cube">
+                <div class="front1">1</div>
+                <div class="back1">2</div>
+                <div class="right">3</div>
+                <div class="left">4</div>
+                <div class="top">5</div>
+                <div class="bottom">6</div>
+            </div>
+        </div>
+        
+        <div class="btn">
+            <button id="btn1">1</button>
+            <button id="btn2">2</button>
+            <button id="btn3">3</button>
+            <button id="btn4">4</button>
+            <button id="btn5">5</button>
+            <button id="btn6">6</button>
+        </div>
+        
+        <script> 
+            $(document).ready(function(){
+                              
+                        $('#btn2').click(function(){
+                        $('#cube').removeClass();
+                        $('#cube').addClass('show-back');
+                    });        
+                
+                        $('#btn3').click(function(){
+                        $('#cube').removeClass();
+                        $('#cube').addClass('show-right');
+                    });  
+                
+                        $('#btn4').click(function(){
+                        $('#cube').removeClass();
+                        $('#cube').addClass('show-left');
+                    }); 
+                
+                        $('#btn5').click(function(){
+                        $('#cube').removeClass();
+                        $('#cube').addClass('show-bottom');
+                    }); 
+                
+                
+                        $('#btn6').click(function(){
+                        $('#cube').removeClass();
+                        $('#cube').addClass('show-top');
+                    }); 
+                
+             });
+        </script>
+       
+    </body>
+</html>
